@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="114538ab-801a-44de-ac3c-e07ac902db78" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prj_3st.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/splitViews/LoginView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/splitViews/Logout.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/splitViews/ModifyView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/splitViews/RegisterView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/splitViews/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/splitViews/common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/splitViews/new_LoginView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/splitViews/new_RegisterView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/splitViews/passwordModifyView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/css/_nav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/css/accounts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/css/user_info_modify.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/images/kakao_login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/images/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/images/loginLogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/images/signup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/_nav.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/password_modify.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/user_info_modify.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/MainView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/collectionView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/followingView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/likeView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/new_MainView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/post_createView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/post_deleteView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/post_detailView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/post_listView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/post_modifyView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/splitViews/searchView.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/static/css/_nav.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/static/css/post_create.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/static/css/post_detail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/static/css/post_list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/static/css/post_modify.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/static/css/search.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/static/images/test.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/templates/_nav.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/templates/collection.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/templates/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/templates/post_create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/templates/post_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/templates/post_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/templates/post_modify.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/templates/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/templates/user_post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/instagram/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/aaaa/6c76f30f-3710-4820-87d0-1662a6994a40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/base/0670e7c3-c5de-41b5-9f29-293aff566c8d.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/0f4ab307-85df-420e-882c-17e91ebad2d4.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/11c87afc-c735-4514-9b38-8b5cd0cef6e1.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/173b3642-4880-4d9d-a3ea-93718b15a720.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/19dd1c82-62dc-4dd0-838b-561841882ec4.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/2fb498da-69f6-471c-a5db-2eabd2641699.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/3114a06b-6c4f-475a-8c08-a6ccd2b30264.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/315eaba6-89e5-4e39-82b3-e8a209a34514.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/44d57b4c-3762-4fc4-9cce-b797cd1e8bdf.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/52d3942c-5d89-44a0-8f2e-a892da44098e.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/549824dd-67e7-42bf-962d-943a0a8e1256.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/7611acb5-65b3-483b-89bb-242a366b3e6a.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/861597d7-ce32-4812-8639-e818944d42f1.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/9c1a4a59-2f6c-4322-8445-9b7034fa673a.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/b4110620-a52d-4115-952c-41bba65da552.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/c44c763e-3efd-4cfa-973d-bc8811395b8b.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/c896d0f6-5aeb-4327-a6db-79aa14fe09af.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/e574d893-ec47-4a42-b6ba-4ac3eb3ff3be.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/hun1762/fc0f3195-1989-4308-a349-f4ef92a57fab.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/jjang1762/b2138049-153b-43ec-8004-4ba5b0b2ff4f.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/039a32fd-fc6b-4aa7-bf3d-7b3badbe2660.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/069e4851-bc58-4cdf-9c16-4c4a73a21554.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/0b1f8ac8-4968-4db8-a225-8a239df7180e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/0b723139-4904-497f-b0f8-62a6ad3b5076.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/0b7f3c3f-31a8-4049-88f4-6f1ce2db1c7c.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/11feddb6-e41e-4347-8834-b2c27fb93887.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/12fc6faf-49c1-4eeb-b11e-6c81f16507d9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/1720bba9-ab32-4f64-bdef-77c8b691d09d.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/23111a75-30c3-456b-a0b0-f4a0c527ea0c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/2838b9a5-5825-4fdf-8ede-502fe70e9ebc.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/2c4648f8-ae4a-45f4-aa75-d59ed7e755e7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/30e9dd18-2bbf-49cc-9187-478444a81f57.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/364f5f86-789e-4ae3-89d9-197c28c5b1ab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/39a4a058-80f8-4b9b-b5c8-544a1f1c5890.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/3dbb49fe-d3c5-4d5d-ab8f-1fa379563368.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/3f16a514-1ed4-441f-b922-f8331e8f3952.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/42836155-8ee5-49c2-8b98-0ddd1225d8f0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/4377e00a-b099-4241-a152-c4ef0f7f96e2.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/4b3b0276-8a72-4e5b-92a0-0e1147112c60.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/4cadc8b5-fdd9-4879-983d-a763237a00fc.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/511d9111-85a2-4d84-a337-a8993c3e1370.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/535caad8-23e3-404d-bf7c-55e4d22da52e.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/590f4671-1398-4e7e-ac70-b93723eb6f36.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/66bcb225-5619-4064-a585-adac263916f4.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/6b67baf0-2388-4094-8a49-1f5c51db1de5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/6ebc06fb-9b70-430c-8f6c-8c28fd13c24d.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/705fb0f3-b7f9-4cc2-ac6e-c62d3f0eadf7.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/7b7cd007-c114-471a-9e2d-e61cda7b6869.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/81742b51-81c2-4be0-a15e-cf70c105b44e.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/82fa1c53-6c18-447f-9a51-02d003aad886.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/83edf9c9-c1a3-4bd5-979a-1481eff6bafb.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/8b20de21-31b9-4b7e-86a3-e429007f89a9.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/8fb186b7-fa16-4688-927d-302929d54119.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/91104b43-558f-49bf-be18-96b7106421f7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/91564de1-a1b2-4968-861c-faf975d91d25.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/93e27aef-26cd-4eda-ac8c-077853bc61fe.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/9dac2101-2634-4487-a8c6-f676b34bd4f1.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/a553687e-f79f-4186-ac26-78b31f12d1db.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/a7279f8f-45c0-465c-a37a-5e0a3ae9f428.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/b0d66453-c6c3-4df4-8607-db2f6632c57c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/b5c5b09e-bab7-4f87-a1e6-e8a5ce1dddba.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/b5efcbbc-0ce5-4c86-9b87-e672889683ab.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/bb96d2c6-54ae-497c-83fe-74b1d6cad5cf.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/ce4b83ff-e393-4a9f-83a1-c93817dd01b2.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/d0150998-2975-4185-a5a5-35812037be4b.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/d07ac136-f0fd-43f9-8af4-09dfab7acedb.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/d7573e39-9f82-41af-9b61-9c5d1ed731a0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/e1269290-fcea-45d0-b88f-6cb8d1f09fb4.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/eac1a954-f8b6-4de6-8cea-053602d24007.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/f6ff815e-53db-4662-8e68-1d4cf56d8fc8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/image/yang1762/fb1be8dd-b14a-42a3-a1fa-f0c739f35899.jpg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1X42kIvuDpKEdBCINLtKcENwsH0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../prj_4st" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\yang1\PycharmProjects\prj_3st\accounts\static\images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="testRunServer" type="PythonConfigurationType" factoryName="Python">
+      <module name="prj_3st" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\yang1\env_python_django_3_7_5\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="runserver" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="114538ab-801a-44de-ac3c-e07ac902db78" name="Default Changelist" comment="" />
+      <created>1580291187517</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580291187517</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580291461049">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1580291461049" />
+    <state x="394" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582179639600">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="394" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1582179639600" />
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1585819368185">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1585819368185" />
+    <state width="1259" height="148" key="GridCell.Tab.0.bottom" timestamp="1587976981326">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="148" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587976981326" />
+    <state width="1259" height="148" key="GridCell.Tab.0.center" timestamp="1587976981326">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="148" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587976981326" />
+    <state width="1259" height="148" key="GridCell.Tab.0.left" timestamp="1587976981326">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="148" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587976981326" />
+    <state width="1259" height="148" key="GridCell.Tab.0.right" timestamp="1587976981326">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="148" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587976981326" />
+    <state width="1259" height="178" key="GridCell.Tab.1.bottom" timestamp="1585832037613">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="178" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1585832037613" />
+    <state width="1259" height="178" key="GridCell.Tab.1.center" timestamp="1585832037613">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="178" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1585832037613" />
+    <state width="1259" height="178" key="GridCell.Tab.1.left" timestamp="1585832037613">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="178" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1585832037613" />
+    <state width="1259" height="178" key="GridCell.Tab.1.right" timestamp="1585832037613">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1259" height="178" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1585832037613" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1588392291642">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1588392291642" />
+    <state x="42" y="85" width="564" height="524" key="StructurePopup" timestamp="1585819439430">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="42" y="85" width="564" height="524" key="StructurePopup/0.0.1280.680@0.0.1280.680" timestamp="1585819439430" />
+    <state width="647" height="347" key="XDebugger.FullValuePopup" timestamp="1585332099877">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="647" height="347" key="XDebugger.FullValuePopup/0.0.1280.680@0.0.1280.680" timestamp="1585332099877" />
+    <state x="333" y="164" key="com.intellij.ide.util.TipDialog" timestamp="1588391966166">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="333" y="164" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1588391966166" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1583243384192">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1583243384192" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/instagram/splitViews/collectionView.py</url>
+          <line>32</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/instagram/splitViews/collectionView.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/instagram/splitViews/post_deleteView.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/instagram/splitViews/followingView.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/instagram/splitViews/searchView.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
