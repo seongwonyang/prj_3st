@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/post_modify.css' %}">
+    <!-- Fontawesome 적용 -->
+    <script src="https://kit.fontawesome.com/0b02921f0e.js" crossorigin="anonymous"></script>
+{% endblock head %}
+
+{% block title %}
+포스트 수정 페이지 | Instagram
+{% endblock title %}
+
+{% block _nav %}
+  {% include '_nav.html' %}
+{% endblock _nav %}
+
+{% block body %}
+
+{% if messages %}
+  <div >
+    {% for message in messages %}
+      {{ message.tags }}! {{ message.message }}
+    {% endfor %}
+  </div>
+{% endif %}
+
+<div class="main">
+  <section class="card_section">
+    <div class="card">
+      <form action="{% url 'instagram:postmodify' post.post_id %}" method="POST" enctype="multipart/form-data"
+        class="post_modify_form">
+        {% csrf_token %}
+        <div class="form-group" id="post_img">
+          <img src="{{ post.post_img_src }}" alt="Image">
+        </div>
+        <div class="form-group" id="modify_content">
+          <textarea name="content" rows="10" cols="128">{{ post.content }}</textarea>
+          <!-- 해시태그 -->
+          <textarea name="hashtag" rows="1" cols="128" placeholder="해시태그 입력...">{{post.hashtag}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">수정하기</button>
+      </form>
+    </div>
+  </section>
+</div>
+
+
+{% endblock body %}

@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/post_detail.css' %}">
+  <!-- Fontawesome 적용 -->
+  <script src="https://kit.fontawesome.com/0b02921f0e.js" crossorigin="anonymous"></script>
+{% endblock head %}
+
+{% block title %}
+포스팅 디테일 페이지 | Instagram
+{% endblock title %}
+
+{% block _nav %}
+  {% include '_nav.html' %}
+{% endblock _nav %}
+
+{% block body %}
+
+<div class="modal fade" id="postEditModal" tabindex="-1" role="dialog" aria-labelledby="postEditModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-body">
+            <!-- close_btn -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            <!-- modify_btn -->
+            <button type="button" class="btn btn-secondary" id="modify_btn" onclick="location.href='{% url 'instagram:postmodify' detail.post_id %}'">포스트 수정</button>
+            <!-- delete_btn -->
+            <button type="button" class="btn btn-secondary" id="delete_btn" onclick="location.href='{% url 'instagram:postdelete' detail.post_id %}'">포스트 삭제</button>
+
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="main">
+    <div class="main_left">
+      <section class="card_section">
+        <div class="card">
+          <header>
+            <img src="{{ detail.profile_img_src }}" alt="test">
+            <div class="user_id" onclick="location.href='{% url 'instagram:list' detail.user_id %}'">{{detail.user_id}}</div>
+            <div class="three_dots_btn">
+                        <!-- Button trigger modal -->
+                        <a href="#" data-toggle="modal" data-target="#postEditModal">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </a>
+            </div>
+          </header>
+          <div class="card_image">
+            <img src="{{ detail.post_img_src }}" alt="test">
+              <!-- hashtag -->
+                {% for hashtag in detail.hashtag %}
+              <a href="{% url 'instagram:search' %}?keyword={{ hashtag | urlencode }}"><p class="hashtag">
+                    {{ hashtag }} &nbsp;
+              </p></a>
+                {% endfor %}
+          </div>
+          <div class="info">
+            <div class="info_left">
+              {% if is_like == 0 %}  <!-- ajax 이용 + onclick 작성하기 -->
+                <i class="far fa-heart" onclick="like(this, '{{ detail.post_id }}')"></i>
+              {% endif %}
+              {% if is_like == 1 %}
+                <i class="fas fa-heart" onclick="like(this, '{{ detail.post_id }}')"></i>
+              {% endif %}
+              <i class="far fa-comment"></i>
+            </div>
+
+
+          <div class="info_right">
+            {% if is_collection == 0 %}
+                <i class="far fa-bookmark" onclick="collection(this, '{{ detail.post_id }}' )"></i>
+            {% endif %}
+            {% if is_collection == 1 %}
+                <i class="fas fa-bookmark" onclick="collection(this, '{{ detail.post_id }}' )"></i>
+            {% endif %}
+          </div>
+          </div>
+            <div class="like_time">
+              <span class="like_number">
+                좋아요 <p id="likeCount">{{ detail.like_count }} </p> 개
+              </span>
+              <span class="upload_time">
+                <p> {{ detail.time }}</p>
+              </span>
+            </div>
+
+        <div class="comment">
+            {{detail.content}}<br>
+        </div>
+
+        <div id="disqus_thread"></div>
+
+      </div>
+    </section>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+  function like(elm, n) {
+    $.ajax({
+      url: "{% url 'instagram:like' 1  %}". replace('1',n),
+      data: {'csrfmiddlewaretoken': '{{ csrf_token}}'},
+      type: "POST",
+      dataType: "json",
+      success: function(response) {
+        if (response.like_check == 0) {
+          $(elm).attr("class", "far fa-heart");
+          $(elm).attr("onclick", "like(this, '" + n + "')");
+          $(elm).parent().parent().next().children().first().children().text(response.likeCount);
+        }
+        else if (response.like_check ==1 ) {
+          $(elm).attr("class", "fas fa-heart");
+          $(elm).attr("onclick", "like(this, '" + n + "')");
+          $(elm).parent().parent().next().children().first().children().text(response.likeCount);
+        }
+      },
+      error: function(xhr){
+        alert("좋아요를 하는 과정에서 에러가 발생하였습니다.");
+      }
+    });
+  }
+
+
+  function collection(elm, n){
+    $.ajax({
+      url: "{% url 'instagram:collection' 1 %}". replace('1',n),
+      data: {'csrfmiddlewaretoken': '{{ csrf_token }}'},
+      dataType: 'json',
+      type: 'POST',
+      success: function(response){
+        if (response.collection_check == 0) {
+          $(elm).attr("class", "far fa-bookmark");
+          $(elm).attr("onclick", "collection(this, '"+ n +"')");
+        }
+        else if (response.collection_check == 1) {
+          $(elm).attr("class", "fas fa-bookmark");
+          $(elm).attr("onclick", "collection(this, '"+ n +"')");
+        }
+      },
+      error: function(xhr) {
+        alert("콜렉션을 하는 과정에서 에러가 발생하였습니다.");
+      }
+    });
+  }
+
+
+</script>
+
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+    this.page.url = "http://127.0.0.1:8000/detail/{{ detail.post_id }}/";
+    this.page.identifier = "{{ detail.post_id }}";
+    this.language = 'ko';
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://clone-instagram.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+{% endblock body %}

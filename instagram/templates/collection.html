@@ -1,0 +1,7 @@
+{% for collection_list in collection_list %}
+        <div class="postBox">
+          <div class="postImg">
+              <img src="{{ collection_list.post_img_src }}" alt="상품 이미지" class="innerImg" onclick="location.href='{% url 'instagram:detail' collection_list.post_id %}'">
+          </div>
+        </div>
+{% endfor %}

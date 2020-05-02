@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/post_list.css' %}">
+  <!-- Fontawesome 적용 -->
+  <script src="https://kit.fontawesome.com/0b02921f0e.js" crossorigin="anonymous"></script>
+{% endblock head %}
+
+{% block title %}
+나의 포스팅 페이지 | Instagram
+{% endblock title %}
+
+{% block _nav %}
+  {% include '_nav.html' %}
+{% endblock _nav %}
+
+{% block body %}
+<!-- Modal -->
+{% if user.is_authenticated %}
+
+      <div class="modal fade" id="FollowingModalScrollable" tabindex="-1" role="dialog"
+        aria-labelledby="FollowingModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="modal-title" id="FollowingModalScrollableTitle">팔로잉</p>
+              <!-- close_btn -->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- 팔로잉 유저 리스트 -->
+              <div class="following_user_form">
+                {% for following_list in following_list %}
+                <div>
+                <!-- 프로필사진, 팔로우 아이디, 메세지, 팔로잉, 팔로우 버튼-->
+                <div class="following_info">
+                  <div class="following_user_img">
+                    <img src="{{ following_list.profile_img_src}}" alt="profile_img">
+                  </div>
+                  <div class="id_message">
+                    <div class="following_id" > <a href="{% url 'instagram:list' following_list.following_id %}"> {{ following_list.following_id }} </a> </div>
+                    <div class="following_id_message">{{ following_list.profile_msg }}</div>
+                  </div>
+
+                <div class="following_btn">
+                  {% if user.username != following_list.following_id %}
+                    {% if following_list.is_follow == 1 %}
+                      <button type="button" class="btn btn-light" id="follow_btn" onclick="follow(this, '{{ following_list.following_id }}')">팔로잉</button>
+                    {% endif %}
+                    {% if following_list.is_follow == 0 %}
+                      <button type="button" class="btn btn-primary" id="follow_btn" onclick="follow(this, '{{ following_list.following_id }}')">팔로우</button>
+                    {% endif %}
+                  {% endif %}
+                </div>
+                </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="FollowerModalScrollable" tabindex="-1" role="dialog"
+        aria-labelledby="FollowingModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <p class="modal-title" id="FollowerModalScrollableTitle">팔로워</p>
+              <!-- close_btn -->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- 팔로잉 유저 리스트 -->
+              <div class="following_user_form">
+                {% for follower_list in follower_list %}
+                <div>
+                <!-- 프로필사진, 팔로우 아이디, 메세지, 팔로잉, 팔로우 버튼-->
+                <div class="following_info">
+                  <div class="following_user_img">
+                    <img src="{{ follower_list.profile_img_src}}" alt="profile_img">
+                  </div>
+                  <div class="id_message">
+                    <div class="following_id"> <a href="{% url 'instagram:list' follower_list.user_id %}"> {{ follower_list.user_id }} </a> </div>
+                    <div class="following_id_message">{{ follower_list.profile_msg }}</div>
+                  </div>
+
+                <div class="following_btn">
+                  {% if user.username != follower_list.user_id %}
+                    {% if follower_list.is_follow == 1 %}
+                        <button type="button" class="btn btn-light" id="follow_btn" onclick="follow(this, '{{ follower_list.user_id }}')">팔로잉</button>
+                    {% endif %}
+                    {% if follower_list.is_follow == 0 %}
+                        <button type="button" class="btn btn-primary" id="follow_btn" onclick="follow(this, '{{ follower_list.user_id }}')">팔로우</button>
+                    {% endif %}
+                  {% endif %}
+                </div>
+                </div>
+                </div>
+               {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endif %}
+      <!-- Modal End -->
+
+{% if messages %}
+  <div>
+    {% for message in messages %}
+      {{ message.tags }}! {{ message.message }}
+    {% endfor %}
+  </div>
+{% endif %}
+
+<div class="main">
+  <div class="user_info">
+  <div>
+    <div class="box">
+      <div class="user_img">
+        <img src="{{ user_name.profile_img_src }}" alt="profile_img">
+      </div>
+      <div class="info">
+        <span class="user_id">
+          <p>{{ user_name.user_id }}</p>
+        </span>
+        <span class="modify">
+        {% if user.is_authenticated %}
+          {% if user.username == user_name.user_id %}
+            <!--프로필편집-->
+            <a href="{% url 'accounts:modify' %}"><i class="fas fa-address-card"></i></a>
+            <!--비밀번호변경-->
+            <a href="{% url 'accounts:passwordmodify' %}"><i class="fas fa-key"></i></a>
+          {% endif %}
+        {% endif %}
+        </span>
+
+        <div class="number">
+          <span class="post_number">
+            게시글 <p>{{ post_count_tuple.post_count }}</p>
+          </span>
+          <span class="follower_number">
+            <a href="#" data-toggle="modal" data-target="#FollowerModalScrollable">
+            팔로워 <p id="followerCounter"> {{ follower_count_tuple.follower_count }} </p>
+            </a>
+          </span>
+          <span class="follow_number">
+            <a href="#" data-toggle="modal" data-target="#FollowingModalScrollable">
+            팔로우 <p id="followingCounter">{{ following_count_tuple.following_count }}</p>
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <span class="profile_msg">
+        <p>{{ user_name.profile_msg }}</p>
+      </span>
+    </div>
+    <div class="button">
+      {% if user.is_authenticated %}
+        {% if user.username != user_name.user_id %}
+          {% if follow_button_tuple.follow_button == 1 %}
+          <button type="button" class="btn btn-light" id="follow_btn_list" onclick="follow(this, '{{ user_name.user_id }}')">팔로잉</button>
+          {% endif %}
+          {% if follow_button_tuple.follow_button == 0 %}
+          <button type="button" class="btn btn-primary" id="follow_btn_list" onclick="follow(this, '{{ user_name.user_id }}')">팔로우</button>
+          {% endif %}
+        {% endif %}
+        {% if user.username == user_name.user_id %}
+          <button type="submit" class="btn btn-primary" onclick="location.href='{% url 'accounts:logout' %}'" >로그아웃</button>&nbsp;
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+    <hr>
+    <!-- 탭 메뉴 게시물/저장됨 -->
+    <div class="user_posts">
+      <nav>
+        <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-post-tab" data-toggle="tab" href="#nav-post" role="tab"
+            aria-controls="nav-post" aria-selected="true">게시글</a>
+          <a class="nav-item nav-link" id="nav-save_post-tab" data-toggle="tab" href="#nav-save_post" role="tab"
+            aria-controls="nav-save_post" aria-selected="false">저장됨</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-post" role="tabpanel" aria-labelledby="nav-post-tab">
+          {% include 'user_post.html' %}
+        </div>
+        <div class="tab-pane fade" id="nav-save_post" role="tabpanel" aria-labelledby="nav-save_post-tab">
+          {% include 'collection.html' %}
+        </div>
+      </div>
+    </div>
+
+
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    function follow(eim,n) {
+      $.ajax({
+        url: "{% url 'instagram:follow' 1 %}". replace('1',n),
+        data : {'csrfmiddlewaretoken': '{{ csrf_token }}', 'current_url': window.location.href },
+        dataType: "json",
+        type: "POST",
+        success: function(response) {
+          if (response.is_follow == 0) {
+            $(eim).attr("class", "btn btn-light");
+            $(eim).attr("onclick", "follow(this, '" + n + "')");
+            $(eim).text("팔로잉");
+            if (eim.id == "follow_btn_list"){
+              $("#followerCounter").text(response.followerCount);
+            }
+            else if (eim.id == "follow_btn"){
+              if (response.list_page_user == response.user){
+                $("#followingCounter").text(response.followingCount);
+              }
+            }
+          }
+          else if (response.is_follow == 1) {
+            $(eim).attr("class", "btn btn-primary");
+            $(eim).attr("onclick", "follow(this, '" + n + "')");
+            $(eim).text("팔로우");
+            if (eim.id == "follow_btn_list"){
+              $("#followerCounter").text(response.followerCount);
+            }
+            else if (eim.id == "follow_btn"){
+              if (response.list_page_user == response.user){
+                $("#followingCounter").text(response.followingCount);
+              }
+            }
+          }
+        },
+        error: function(xhr) {
+          alert("팔로우를 하는 과정에서 에러가 발생하였습니다.");
+        }
+      });
+    }
+</script>
+
+{% endblock body %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/post_create.css' %}">
+  <!-- Fontawesome 적용 -->
+  <script src="https://kit.fontawesome.com/0b02921f0e.js" crossorigin="anonymous"></script>
+{% endblock head %}
+
+{% block title %}
+글 작성하기 | Instagram
+{% endblock title %}
+
+{% block _nav %}
+  {% include '_nav.html' %}
+{% endblock _nav %}
+
+{% block body %}
+<div class="main">
+  <section class="card_section">
+    <div class="card">
+      <form action="{% url 'instagram:create' %}" method="POST" enctype="multipart/form-data" class="post_create_form">
+      {% csrf_token %}
+        <div class="form-group">
+          {% comment %} <input type="textarea" class="form-control" id="content" name="content" placeholder="내용을 입력해주세요."> {% endcomment %}
+          <textarea name="content" rows="10" cols="128">
+          </textarea>
+        </div>
+        <!-- 해시태그 -->
+        <div class="form-group">
+          <textarea name="hashtag" rows="1" cols="133" placeholder="해시태그 입력..."></textarea>
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="post_img" name="post_img" aria-describedby="inputGroupFileAddon01">
+            <label class="custom-file-label" for="post_img">파일을 선택해주세요.</label>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">글 올리기</button>
+      </form>
+    </div>
+  </section>
+</div>
+{% endblock body %}

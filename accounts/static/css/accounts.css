@@ -1,0 +1,15 @@
+.card{
+    border: 1px solid #c7c7c7;
+    background-color: #fafafa;
+    width:350px;
+    height: auto;
+}
+#kakao_login{
+    background-color: #fafafa;
+    border: none;
+    outline: none;
+    margin-left: -12px;
+}
+#kakao_login img{
+    width: 200px;
+}
