@@ -1,1 +1,1 @@
-prj_3st
+Django Project 3 | 인스타그램 클론코딩
